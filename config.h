@@ -1,7 +1,7 @@
-/* See LICENSE file for copyright and license details. */
+/*somewhat default dwm config*/
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -61,12 +61,16 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 static const char *browsercmd[] = { "thorium-browser", NULL };
+static const char *notescmd[] = { "xournalpp", NULL };
+static const char *filecmd[] = { "thunar", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                XK_c, 	   spawn,          {.v = termcmd } },
 	{ MODKEY,			XK_b,	   spawn,	   {.v = browsercmd } },
+	{ MODKEY, 			XK_n, 	   spawn,	   {.v = notescmd } },
+	{ MODKEY, 			XK_e, 	   spawn, 	   {.v = filecmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
